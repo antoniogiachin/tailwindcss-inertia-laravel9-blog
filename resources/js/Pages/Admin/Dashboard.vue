@@ -1,11 +1,11 @@
 <template>
-    <h1>Gestisci i tuoi post</h1>
-    <Link href="/" class="text-blue-500">Torna alla home</Link>
+    <h1 class="text-2xl text-center">Questa è la tua Dashboard! Da qui puoi vedere e gestire i post, oppure modificare il tuo profilo!</h1>
 </template>
 
 <script>
+import DashLayout from '../Shared/DashLayout.vue';
 export default {
-
+    layout : DashLayout,
 }
 </script>
 

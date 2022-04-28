@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Admin\PostController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\UserController;
 use Illuminate\Support\Facades\Route;
@@ -38,3 +39,13 @@ Route::post('/register', [UserController::class, 'store']);
 
 // rotta per dashboard
 Route::get('/dashboard', [AdminController::class, 'index'])->prefix('admin')->middleware('auth')->name('dashboard');
+
+// rotte posts
+Route::middleware('auth')
+->name('admin.')
+->prefix('admin')
+->group(
+    function(){
+        Route::resource('/posts', PostController::class);
+    }
+);
